@@ -1,0 +1,42 @@
+// Styling for the masthead
+header.masthead {
+	position: relative;
+
+	width: 100%;
+	padding-top: $top-nav-height;
+
+	//color: white;
+
+	//animation: my-animation 20s infinite;
+	//background: $theme-secondary;
+	//background: linear-gradient(to left, $theme-secondary, $theme-tertiary);
+	.header-content {
+		//max-width: 800px;
+		margin-bottom: 100px;
+
+		text-align: center;
+		h1 {
+			font-size: 30px;
+		}
+	}
+	.device-container {
+		max-width: 325px;
+		margin-right: auto;
+		margin-left: auto;
+		.screen img {
+			border-radius: 3px;
+		}
+	}
+
+	@include media-breakpoint-down(md){
+		padding-top: $top-nav-height-mobile;
+	}
+
+	.arrow_down {
+		margin-top: 2rem;
+		text-align: center;
+		a {
+			//color: $text-color-light;
+		}
+	}
+}

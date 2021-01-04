@@ -1,0 +1,23 @@
+// Styling for the footer
+footer {
+	padding: 25px 0;
+	text-align: center;
+	color: $text-color;
+	background-color: $gray-light;
+	p,a {
+		font-size: 12px;
+		margin: 0;
+	}
+	ul {
+		margin-bottom: 0;
+		li, li a {
+				font-size: 12px;
+				&:hover,
+				&:focus,
+				&:active,
+				&.active {
+					text-decoration: none;
+				}
+		}
+	}
+}

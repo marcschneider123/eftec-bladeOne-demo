@@ -1,0 +1,117 @@
+.navbar-contact {
+	height: $fixed-top-nav-height;
+	padding: 0.25em 0;
+	z-index: 1050;
+	> .row {
+		padding: 0 1rem;
+	}
+	a {
+		font-size: 0.9rem;
+	}
+}
+
+// margin top when fixed topNav is displayed
+body.topNav #app, .topNav #mainNav {
+	@include media-breakpoint-up('md') {
+		margin-top: $fixed-top-nav-height;
+	}
+}
+
+#mainNav {
+	border-color: fade-out($gray-darker, .95);
+	background-color: $white;
+	transition: all $transD;
+
+	font-family: $font-heading;
+	font-weight: 300;
+	height: $top-nav-height;
+	letter-spacing: 1px;
+
+	.navbar-brand {
+		color: $theme-primary;
+		@include heading-font;
+		&:hover,
+		&:focus {
+			color: darken($theme-primary, 10%);
+		}
+	}
+	.navbar-toggler {
+		font-size: 12px;
+		padding: 8px 10px;
+		color: $gray-darker;
+	}
+	.navbar-nav {
+		> li {
+			//margin-top: 3px;
+			> a {
+				font-size: 0.9rem;
+				font-weight: 300;
+				@include alt-font;
+				&.active {
+					color: $theme-primary !important;
+					background-color: transparent;
+					&:hover {
+						background-color: transparent;
+					}
+				}
+			}
+			>a:not(.btn){
+				margin-top: 2px;
+			}
+			> a.btn {
+				color: $text-color-light !important;
+			}
+			> a,
+			> a:focus {
+				color: $gray-darker;
+				&:hover {
+					color: $theme-primary;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 992px) {
+		border-color: transparent;
+		background-color: transparent;
+
+		.navbar-brand {
+			color: fade(white, 70%);
+			&:hover,
+			&:focus {
+				color: white;
+			}
+		}
+		.navbar-nav > li > a,
+		.navbar-nav > li > a:focus {
+			color: fade-out(black, .3);
+			&:hover {
+				color: black;
+			}
+		}
+		&.navbar-shrink {
+			border-color: fade-out($gray-darker, .9);
+			background-color: white;
+			box-shadow: $box-shadow-sm;
+
+			.navbar-brand {
+				color: $gray-darker;
+				&:hover,
+				&:focus {
+					color: $theme-primary;
+				}
+			}
+			.navbar-nav > li > a,
+			.navbar-nav > li > a:focus {
+				color: $gray-darker;
+				&:hover {
+					color: $theme-primary;
+				}
+			}
+		}
+	}
+	@include media-breakpoint-down(md) {
+		box-shadow: $box-shadow-sm;
+		height: 80px;
+	}
+}

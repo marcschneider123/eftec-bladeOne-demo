@@ -1,0 +1,20 @@
+/*
+ * vendor files
+ * @note ~ denotes node_modules directory by default.
+ */
+@import "~bootstrap/scss/functions";
+$custom-file-text: (
+	de: "Datei wählen"
+);
+@import "~bootstrap/scss/bootstrap";
+//@import "~html5-device-mockups";
+
+@import "mixins/module";
+@import "utils/module";
+@import "components/module";
+@import "base/typography";
+
+@import "layout/module";
+
+//vendor
+@import "~zurb-twentytwenty/css/twentytwenty";

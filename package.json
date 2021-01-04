@@ -1,0 +1,52 @@
+{
+  "title": "EFTEC/BladeOne landingpage template",
+  "name": "eftec-bladeOne-landingpage-template",
+  "version": "1.0.0",
+  "description": "One page landing page HTML template for Bootstrap 4.",
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "homepage": "http://eftec-bladeOne.rf.gd",
+  "author": "Marc Schneider",
+  "contributors": [
+    "Marc Schneider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcschneider123/eftec-bladeOne-demo"
+  },
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.4.1",
+    "laravel-mix": "^5.0.4",
+    "parsleyjs": "^2.9.1"
+  },
+  "devDependencies": {
+    "popper.js": "^1.16.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10",
+    "zurb-twentytwenty": "https://github.com/zurb/twentytwenty"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  }
+}

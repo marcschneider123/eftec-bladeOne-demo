@@ -1,0 +1,200 @@
+/*
+ * Hover effects
+ * @url https://github.com/codrops/IconHoverEffects
+ */
+
+/* Icon effects */
+.icon-wrap {
+	text-align: center;
+	margin: 0 auto;
+	padding: 3rem 0 1rem;
+	z-index: 1;
+
+
+	a, > span {
+		//background: rgba($grey-dark,0.1);
+		background: $container-bg-light;
+		//background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+		background-image: linear-gradient($white, $white), linear-gradient(-45deg, $theme-secondary, $theme-primary);
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		border-radius: 50%;
+		border: double 2px transparent;
+
+		//cursor: pointer;
+		display: inline-block;
+		font-size: 3rem;
+
+		//background: linear-gradient(to right, $theme-primary, $theme-secondary);
+		height: 110px;
+		margin: 15px 30px;
+		//padding-top: 10px;
+		position: relative;
+		width: 110px;
+		z-index: 1;
+
+		&:hover {
+			transform: scale(0.93);
+		}
+
+		&:after {
+			pointer-events: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			box-sizing: content-box;
+			content:'';
+		} // a:after
+
+		svg * {
+			fill: url(#linearGradient);
+		}
+		span {
+			display: inline-block;
+			padding-top: 17px;
+		}
+
+	} //a
+	img {
+		//width: 250px;
+	}
+
+} //.icon-wrap
+
+/*
+ * icon effect sonar
+ */
+.icon-effect-sonar {
+	a, > span {
+		transition: ease-out 0.1s, background 0.2s;
+	} //a
+
+	> span:after, a:after {
+	  top: 0;
+	  left: 0;
+	  padding: 0;
+	  z-index: -1;
+	  box-shadow: 0 0 0 2px rgba($gray-dark,0.1);
+	  opacity: 0;
+	  transform: scale(0.9);
+	} //a:after
+
+	> span:hover, a:hover {
+	  //background: darken($container-bg-light,10%);
+	  //background-image: linear-gradient($white, $white), linear-gradient(-45deg, $theme-secondary, $theme-primary);
+	  transform: scale(0.93);
+	} //a:hover
+
+	a:hover:after, span:hover:after {
+		animation: sonarEffect 1.3s ease-out 75ms;
+	}
+} //.icon-effect-sonar
+
+@keyframes sonarEffect{
+	0% {
+		opacity: 0.3;
+	}
+	40% {
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px rgba($theme-secondary,0.1), 0 0 10px 10px $theme-primary, 0 0 0 10px rgba($theme-secondary,0.5);
+	}
+	100% {
+		opacity: 0;
+		box-shadow: 0 0 0 2px rgba($theme-secondary,0.1), 0 0 10px 10px $theme-primary, 0 0 0 10px rgba($theme-secondary,0.5);
+		transform: scale(1.5);
+	}
+}
+
+/* Sweep to top */
+.hvr-sweep-to-top {
+  @include hovereffect();
+
+  .overlay {
+    //width: 90%;
+    //left: 5%;
+    background: $gray-dark;
+    bottom: 0;
+    //bottom: 3em;
+    //padding: 0.5em;
+    height: 50px;
+    opacity:0.9;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    transition: $transD;
+    /*
+    @include translate(0,100%);
+    @include translate3d(0,100%,0);
+    //@include translate3d(0,2em,0);
+    */
+    z-index: 100;
+    span {
+      color: $white;
+      display: block;
+      height: 50px;
+      text-align: center;
+      padding: 6px;
+
+      &.heading {
+        transition: $transD;
+        font-size: 24px;
+      }
+      &.text {
+        font-size: 18px;
+      }
+    } //span
+
+  } //.overlay
+
+  img.img-responsive {
+    margin-bottom: 0;
+    display: block;
+    position: relative;
+    transition: $transD;
+  }
+
+  &:hover {
+    img {
+      //@include translate3d(0,-10%,0);
+      transform: scale($scaleFactor);
+
+    }
+    .overlay {
+      .heading {
+        margin-top: -50px;
+      }
+    }
+
+  } //&:hover
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  //transform: translateZ(0);
+  translateZ: 0;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 1px;
+  backface-visibility: hidden;
+  transition: $transD;
+}
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  transform: scale($scaleFactor);
+}
+
+.hvr-grow-img{
+  @include hovereffect();
+
+  img {
+    display: block;
+    position: relative;
+    transition: all	$transD	linear;
+  }
+
+  &:hover img {
+    transform: scale($scaleFactor);
+  }
+
+} //.hvr-grow-img

@@ -1,0 +1,142 @@
+html, body {
+	height: 100%;
+}
+
+body {
+
+	background-color: $container-bg-light;
+	display: flex;
+	flex-direction: column;
+	font-weight: 300;
+
+	&.bg-animated {
+		background: linear-gradient(to right, $blue-light, $blue-medium);
+		//background: radial-gradient(orange, yellow, $blue-light);
+	}
+
+	.bg-primary {
+		background: $theme-primary;
+		background: linear-gradient($theme-primary, darken($theme-primary, 5%));
+	}
+
+	#app {
+		flex: 1 0 auto;
+	}
+
+	.logo {
+		height: 80px;
+		@include media-breakpoint-down(md) {
+			height: 50px;
+		}
+	}
+
+	.container-fluid {
+		//padding-left: 0;
+		//padding-right: 0;
+	}
+}
+
+.row-fluid {
+	//margin-left: 0;
+	//margin-right: 0;
+	> [class^="col"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+section {
+	padding: 100px 0;
+
+	&.section-light {
+		background-color: $container-bg-light;
+	}
+	&.section-medium {
+		background-color: $container-bg-medium;
+	}
+
+	h2 {
+		font-size: 50px;
+	}
+
+	.heading {
+		padding-bottom: 1rem;
+
+		i {
+			padding-right: 0.5rem;
+		}
+	}
+	//.heading
+}
+
+/*
+ *  Slim Header section
+ */
+.section.section-slim {
+	padding: 1vh 0;
+	h1, h2 {
+		display: inline;
+		padding-right: 0.5rem;
+		line-height: 2.5rem;
+	}
+	.heading {
+		padding-bottom: 1rem;
+	}
+
+}
+
+.section.section-wide {
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+}
+
+.section.users {
+	.btn-sm {
+		margin: 1rem 0;
+	}
+}
+
+/*
+ * Jump above anchor
+ */
+.anchor {
+	display: block;
+	position: relative;
+	top: -2rem; /*same height as header*/
+	visibility: hidden;
+}
+
+.back-to-top {
+	cursor: pointer;
+	position: fixed;
+	bottom: 80px;
+	right: 15px;
+	display: none;
+	z-index: 900;
+}
+
+.no-gutter > [class*='col-'] {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+hr {
+	max-width: 100px;
+	margin: 25px auto 0;
+	border-width: 1px;
+	border-color: fade-out($gray-darker, .9);
+
+	&.light {
+		border-color: $white;
+	}
+}
+
+noscript {
+	border: 2px solid $red;
+	color: red;
+	width: 100%;
+	text-align: center;
+	margin-top: 10rem;
+	margin-top: 25vh;
+	padding: 1rem;
+}

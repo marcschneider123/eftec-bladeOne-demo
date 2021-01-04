@@ -1,0 +1,18 @@
+{
+    "name": "eftec-bladeOne-landingpage-template",
+    "authors": [
+        {
+            "name": "Marc Schneider"
+        }
+    ],
+    "homepage": "http://eftec-bladeOne.rf.gd",
+    "require": {
+        "eftec/bladeone": "^3.31",
+        "phpmailer/phpmailer": "^6.1"
+    },
+    "autoload": {
+    "files": [
+        "mix.php"
+    ]
+}
+}

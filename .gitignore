@@ -1,0 +1,37 @@
+Thumbs.db
+desktop.ini
+.DS_Store
+/FTP/
+
+
+###
+# PHP Storm
+###
+.idea
+.phpstorm.meta.php
+_ide_helper.php
+b
+
+###
+# Laravel
+###
+/vendor/
+node_modules/
+/stats/
+Homestead.yaml
+Homestead.json
+.sass-cache
+yarn-error.log
+
+.env.*.php
+.env.php
+.env
+
+# public folder
+/public/*
+!/public/img/
+!/public/favicon.ico
+!/public/index.php
+!/public/.htaccess
+composer.lock
+package-lock.json
